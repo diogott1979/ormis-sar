@@ -7,7 +7,7 @@
 .geo-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.geo-toolbar span{font-size:12px;color:#496a84}.geo-frame{border:1px solid #a6bfd5;background:#eef5f8;border-radius:5px;overflow:hidden}.geo-frame svg{display:block;width:100%;height:auto;min-height:260px;cursor:crosshair;touch-action:manipulation}.map-status{font-size:12px;margin-top:7px;color:#435f7b}.map-status.error{color:#a43120;font-weight:bold}.geo-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;margin-top:9px}.geo-legend span{display:inline-flex;gap:6px;align-items:center}.dot{height:11px;width:11px;border-radius:100%;display:inline-block}.dot.origin{background:#156aa4}.dot.target{background:#cf4537}.line-symbol{width:22px;border-top:3px dashed #dd7525;display:inline-block}@media print{.print-route{height:75mm;overflow:hidden;padding:0}.print-route svg{height:73mm;width:100%;display:block}.print-page{min-height:0}}
 @media print{.report{font-size:8.6pt}.print-header{font-size:13pt;padding:8px}.print-title{margin-top:6px;padding:4px}.print-grid{gap:3px;margin-top:4px}.print-item{padding:3px}.print-item b{font-size:7pt}.print-par{min-height:0;padding:5px;font-size:8pt;margin-top:4px}.print-page{height:267mm;overflow:hidden}.print-route{height:80mm}.print-route svg{height:79mm}.print-foot{bottom:1mm}}
 .air-flight{border:1px solid #d1deea;border-radius:5px;padding:9px;background:#f9fbfe}.air-flight.inactive{opacity:.52}.air-flight.inactive input{background:#edf0f4}.air-flight .grid{margin-top:7px}@media(max-width:850px){.air-flight .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-</style></head><body><main class="shell"><header class="top"><div><h1>ORMIS SAR <small style="font-size:13px">| Resgate</small></h1><span>Formulário operacional SAR · Mapa topográfico, coordenadas GMS e PDF · CORREÇÃO 22OUT26-C · SOMENTE TESTES</span></div><div class="actions"><button id="clear">+ Nova missão</button><button id="import">Abrir registo</button><input id="import-file" type="file" accept="application/json,.json" hidden><button id="save">Guardar rascunho</button><button id="export">Exportar registo</button><button class="primary" id="pdf">Preparar PDF</button><a id="open-standalone" href="#" target="_blank" rel="noopener" style="color:white;font-size:12px;white-space:nowrap">Abrir fora do Experience ↗</a></div></header><div style="padding:7px 13px;background:#fff0b8;color:#493600;font-weight:700;border-radius:4px;margin-top:7px" id="build-indicator">VERSÃO 22OUT26-C — PDF direto no Experience Builder</div><div id="ormis-feedback" role="status" aria-live="polite" style="padding:10px 14px;background:#e8f4ff;border:1px solid #a5c9ea;color:#12395f;font-size:13px;display:none;margin-top:8px;border-radius:5px"></div>
+</style></head><body><main class="shell"><header class="top"><div><h1>ORMIS SAR <small style="font-size:13px">| Resgate</small></h1></div><div class="actions"><button id="clear">+ Nova missão</button><button id="import">Abrir registo</button><input id="import-file" type="file" accept="application/json,.json" hidden><button id="save">Guardar rascunho</button><button id="export">Exportar registo</button><button class="primary" id="pdf">Preparar PDF</button><a id="open-standalone" href="#" target="_blank" rel="noopener" style="color:white;font-size:12px;white-space:nowrap">Abrir fora do Experience ↗</a></div></header><div id="ormis-feedback" role="status" aria-live="polite" style="padding:10px 14px;background:#e8f4ff;border:1px solid #a5c9ea;color:#12395f;font-size:13px;display:none;margin-top:8px;border-radius:5px"></div>
 <section class="section"><div class="head">1 &nbsp; Identificação da missão</div><div class="contents grid"><div class="field"><label>N.º ORMIS</label><input data-f="ormis" placeholder="Introduza o número institucional"></div><div class="field"><label>N.º ocorrência SADO (manual)</label><input data-f="sado" placeholder="Introduza o número SADO, se aplicável"></div><div class="field"><label>Tipo de missão (fixo)</label><input data-f="tipo" value="SAR" readonly aria-label="Tipo de missão SAR"></div><div class="field"><label>Estado</label><select data-f="estado"><option>Em preparação</option><option>Em curso</option><option>Concluída</option><option>Cancelada</option></select></div><div class="field"><label>Data da missão</label><input data-f="data" type="date"></div><div class="field"><label>Hora</label><input data-f="hora" type="time"></div><div class="field wide"><label>Local / referência</label><input data-f="local" placeholder="Localidade, freguesia, concelho"></div><div class="field wide"><label>Solicitado por</label><input data-f="solicitante" placeholder="COS / entidade / operador"></div><div class="field wide"><label>Objetivo da missão</label><input data-f="objetivo" placeholder="Descreva a finalidade operacional"></div></div></div></section>
 <section class="section"><div class="head">2 &nbsp; Dados operacionais</div><div class="contents grid"><div class="field"><label>Concelho</label><input data-f="concelho" placeholder="Concelho da missão"></div><div class="field"><label>COS</label><input data-f="cos" placeholder="Identificação do COS, se aplicável"></div><div class="field wide"><label>CB / Entidades envolvidas</label><input data-f="entidades" placeholder="Corpos de bombeiros e outras entidades"></div><div class="field"><label>De</label><input data-f="emissor" value="CROS" readonly></div><div class="field"><label>Para</label><input data-f="destinatario" value="Chefe de Brigada" readonly></div><div class="field all"><label>Breve descrição da ocorrência / situação</label><textarea data-f="descricao" placeholder="Situação comunicada, vítimas, acessos e informação relevante"></textarea></div></div></section>
 <section class="section"><div class="head">3 &nbsp; Comunicações e condições no local</div><div class="contents grid"><div class="field wide"><label>Grupo de conversação SIRESP</label><input data-f="sireSP" placeholder="Ex.: PC COOR MA"></div><div class="field wide"><label>Coordenadas partilhadas com a tripulação?</label><select data-f="coordsPartilhadas"><option value="">Por confirmar</option><option>Sim</option><option>Não</option></select></div><div class="field wide"><label>Condições do local</label><textarea data-f="condicoesLocal" placeholder="Acessibilidade, terreno, perigos e condicionantes"></textarea></div><div class="field wide"><label>Condições meteorológicas no local</label><textarea data-f="meteoLocal" placeholder="Vento, visibilidade, nuvens e outras observações relevantes"></textarea></div></div></section>
@@ -21,14 +21,14 @@
 <div hidden><input data-f="inicioVoo"><input data-f="fimVoo"><input data-f="minutosVoo"><input data-f="horasVoo"><input data-f="descargas"><input data-f="guinchos"></div></div></section>
 <div class="two"><section class="section"><div class="head">8 &nbsp; Planeamento e informação operacional</div><div class="contents"><div class="grid" style="grid-template-columns:1fr 1fr"><div class="field"><label>Meios aéreos destacados *</label><div class="air-options" role="group" aria-label="Selecionar meios aéreos"><label><input type="checkbox" class="air-choice" value="LAUROS1 (BELL 412)"> LAUROS1 (BELL 412)</label><label><input type="checkbox" class="air-choice" value="LAUROS2 (AS350B3)"> LAUROS2 (AS350B3)</label></div><input type="hidden" data-f="meio"><small class="help">Pode selecionar um ou os dois meios aéreos.</small></div><div class="field"><label>Prioridade</label><select data-f="prioridade"><option>Normal</option><option>Elevada</option><option>Urgente</option></select></div><div class="field all"><label>Instruções e observações</label><textarea data-f="obs" placeholder="Instruções, condições operacionais, limitações e notas"></textarea></div></div></div></section><section class="section"><div class="head">9 &nbsp; Mapa da missão — base topográfica</div><div class="contents"><p class="help">Mapa topográfico carregado pela Internet (Esri/ArcGIS Online). Clique no mapa para definir o destino ou introduza as coordenadas manualmente. A linha desenhada não é uma rota de voo autorizada.</p><div class="geo-toolbar"><button type="button" id="fit-map">Enquadrar CMA e destino</button><button type="button" id="reset-map">Centrar na Cancela</button><span id="map-info" role="status">Clique para indicar o destino</span></div><div class="geo-frame"><svg id="geo-map" viewBox="0 0 760 360" role="img" aria-label="Esquema georreferenciado com o CMA da Cancela, destino, rumo e distância" tabindex="0"></svg></div><div class="map-status" id="map-base-status" role="status">A carregar mapa topográfico…</div><div class="geo-legend"><span><i class="dot origin"></i>CMA Cancela</span><span><i class="dot target"></i>Destino da missão</span><span><i class="line-symbol"></i>Ligação direta (não é rota de voo)</span></div><p class="help">A seleção no mapa define a latitude e longitude do destino (WGS84). O norte fica orientado para cima. O mapa depende de acesso à Internet e não substitui cartografia aeronáutica.</p></div></section></div>
 <section class="section"><div class="head">10 &nbsp; Responsáveis pela missão e emissão da ORMIS</div><div class="contents"><div class="responsaveis-row"><div class="field"><label>Chefe de brigada *</label><input data-f="chefeBrigada" placeholder="Nome" autocomplete="off"></div><div class="field"><label>Piloto comandante *</label><input data-f="pilotoComandante" placeholder="Nome" autocomplete="off"></div><div class="field"><label>Chefe de sala — emissão ORMIS *</label><input data-f="chefeSala" placeholder="Nome" autocomplete="off"></div></div><div class="emissao-row field"><label>Restantes elementos da tripulação (facultativo)</label><input data-f="tripulacao" placeholder="Nomes / funções, se aplicável"></div><div class="emissao-row field"><label>Data e hora de emissão da ORMIS</label><input data-f="dataEmissao" readonly placeholder="Preenchida ao preparar o PDF"></div></div></section>
-<div class="notice" id="archive-notice">ORMIS SAR — Resgate. Esta versão funciona sem servidor: os dados apenas são guardados neste navegador quando selecionar «Guardar». O botão «Preparar PDF» gera um PDF para descarregar diretamente; se a transferência for bloqueada, use a ligação de descarregamento apresentada. O ficheiro não é arquivado automaticamente no servidor. O arquivo institucional deve ser feito manualmente. «Exportar registo» gera um ficheiro JSON reutilizável para reabrir e editar a missão; «Preparar PDF» gera a versão para arquivo documental.</div><div class="footer">ORMIS — CMA fixo: Cancela · versão 15 · mapa topográfico · dados manuais. Os cálculos e campos não substituem a validação operacional.</div></main>
+<div class="notice" id="archive-notice">ORMIS SAR — Resgate. Esta versão funciona sem servidor: os dados apenas são guardados neste navegador quando selecionar «Guardar». O botão «Preparar PDF» abre a impressão do navegador; escolha «Guardar como PDF» e confirme o nome proposto. O ficheiro não é arquivado automaticamente no servidor. O arquivo institucional deve ser feito manualmente. «Exportar registo» gera um ficheiro JSON reutilizável para reabrir e editar a missão; «Preparar PDF» gera a versão para arquivo documental.</div><div class="footer">ORMIS — CMA fixo: Cancela · versão 15 · mapa topográfico · dados manuais. Os cálculos e campos não substituem a validação operacional.</div></main>
 <div class="report" id="report"><article class="print-page"><div class="print-header">ORMIS SAR — ORDEM / REGISTO DE MISSÃO</div><div class="print-sub">Serviço Regional de Proteção Civil · Relatório operacional SAR · Página 1 de 2</div><div class="print-title">Identificação</div><div class="print-grid" id="r-ident"></div><div class="print-title">Dados operacionais e comunicações</div><div id="r-operacionais" class="print-grid"></div><div class="print-title">Descrição da ocorrência / situação</div><div class="print-par" id="r-descricao"></div><div class="print-title">Localização e navegação</div><div class="print-grid" id="r-nav"></div><div class="print-title">Atividade aérea da missão</div><div class="print-grid" id="r-atividade"></div><div class="print-title">Condições do local e meteorologia</div><div id="r-condicoes" class="print-grid"></div><div class="print-title">Instruções e observações</div><div class="print-par" id="r-obs"></div><div class="print-foot">Documento gerado localmente · Confirmar todos os dados antes do arquivo · 1 / 2</div></article><article class="print-page"><div class="print-header">ORMIS — LOCALIZAÇÃO E MISSÃO</div><div class="print-sub">Serviço Regional de Proteção Civil · Anexo de localização · Página 2 de 2</div><div class="print-title">Pontos de referência</div><div class="print-grid" id="r-points"></div><div class="print-title">Mapa topográfico e linha direta de navegação</div><div class="print-route" id="print-geo"></div><div id="print-base-note" style="font-size:8pt;color:#536678;margin-top:4px"></div><div class="print-title">Nota operacional</div><div class="print-par">A linha apresentada indica o rumo direto entre o CMA e o local da missão, não constituindo uma rota de voo validada.</div><div class="print-title">Responsáveis pela missão e emissão da ORMIS</div><div class="print-grid" id="r-responsaveis"></div><div class="print-foot">Documento gerado localmente · Confirmar todos os dados antes do arquivo · 2 / 2</div></article></div>
 <script>
 const embedded = (()=>{try{return window.self!==window.top}catch(e){return true}})();
 const feedback=document.getElementById('ormis-feedback');
 function notify(msg,err=false){feedback.style.display='block';feedback.style.background=err?'#fff0ed':'#e8f4ff';feedback.style.color=err?'#932d18':'#12395f';feedback.textContent=msg;}
 document.getElementById('open-standalone').href=location.href;
-if(embedded)notify('Aplicação incorporada: o PDF é gerado diretamente; se o navegador bloquear a transferência, use a ligação de descarregamento apresentada.');
+if(embedded)notify('Aplicação incorporada: algumas funções de impressão, transferência ou armazenamento podem estar limitadas. Para finalizar o PDF, abra em nova janela.');
 const APP_TIPO='SAR';
 const fields=[...document.querySelectorAll('[data-f]')], get=k=>document.querySelector(`[data-f="${k}"]`).value, set=(k,v)=>document.querySelector(`[data-f="${k}"]`).value=v??'', safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])), v=k=>get(k).trim()||'Não indicado';
 function toGMS(raw,axis){
@@ -94,7 +94,7 @@ function syncAirFromChecks(){set('meio',airChoices.filter(c=>c.checked).map(c=>c
 function syncChecksFromSaved(){const saved=get('meio');airChoices.forEach(c=>{c.checked=saved.includes(c.value)});syncAirFromChecks();}
 airChoices.forEach(c=>c.addEventListener('change',()=>{syncAirFromChecks();syncFlightHours()}));
 
-fields.forEach(el=>el.addEventListener('input',calculate));['l1Inicio','l1Fim','l1Desc','l1Guin','l2Inicio','l2Fim','l2Desc','l2Guin'].forEach(k=>document.querySelector(`[data-f="${k}"]`).addEventListener('input',syncFlightHours));document.getElementById('pdf').onclick=()=>{buildPDF().catch(e=>notify('Erro ao criar PDF: '+e.message,true))};document.getElementById('save').onclick=()=>{try{localStorage.setItem('ormis_sar_rascunho_v1',JSON.stringify(snapshot()));notify('Rascunho guardado neste navegador. Não foi enviado para o servidor.')}catch(e){notify('Não foi possível guardar no navegador. Utilize Exportar registo.')}};
+fields.forEach(el=>el.addEventListener('input',calculate));['l1Inicio','l1Fim','l1Desc','l1Guin','l2Inicio','l2Fim','l2Desc','l2Guin'].forEach(k=>document.querySelector(`[data-f="${k}"]`).addEventListener('input',syncFlightHours));document.getElementById('pdf').onclick=()=>{if(embedded){notify('Para preparar o PDF, abra a ORMIS numa nova janela. Se já preencheu dados, utilize Exportar registo (JSON) antes de sair, e depois Abrir registo na nova janela.',true);return;}if(!validateMission())return;const agora=new Date();set('dataEmissao',agora.toLocaleString('pt-PT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}));prep();document.title=filename();notify('A abrir impressão: selecione Guardar como PDF e confirme o nome do ficheiro.');window.print()};document.getElementById('save').onclick=()=>{try{localStorage.setItem('ormis_sar_rascunho_v1',JSON.stringify(snapshot()));notify('Rascunho guardado neste navegador. Não foi enviado para o servidor.')}catch(e){notify('Não foi possível guardar no navegador. Utilize Exportar registo.')}};
 document.getElementById('export').onclick=()=>{syncAirFromChecks();syncFlightHours();notify('A preparar ficheiro JSON. Confirme se o navegador autoriza transferências nesta página.');download(JSON.stringify(snapshot(),null,2),filename('.json'),'application/json;charset=utf-8')};
 document.getElementById('import').onclick=()=>document.getElementById('import-file').click();
 document.getElementById('import-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>1000000)throw Error('Ficheiro demasiado grande');const obj=JSON.parse(await file.text());if(obj.format!=='ORMIS-local'||!obj.fields||typeof obj.fields!=='object')throw Error('Formato não reconhecido');if(obj.app&&obj.app!=='SAR')throw Error('Este registo pertence à ORMIS '+obj.app+'. Abra a aplicação correspondente.');if(obj.fields.tipo&&normalizeTipo(obj.fields.tipo)!=='SAR')throw Error('Este registo é de outro tipo de missão.');for(const f of fields){if(['cma','cmaLat','cmaLon','emissor','destinatario'].includes(f.dataset.f))continue;const x=obj.fields[f.dataset.f];if(typeof x==='string'&&x.length<=30000)f.value=f.dataset.f==='tipo'?APP_TIPO:x;}syncChecksFromSaved();syncFlightHours();calculate();notify('Registo carregado. Confirme os dados antes de exportar.')}catch(err){notify('Não foi possível abrir o registo: '+err.message)}finally{e.target.value=''}};let clearArmed=false;document.getElementById('clear').onclick=()=>{if(!clearArmed){clearArmed=true;notify('Para iniciar uma nova missão e limpar os campos, clique novamente em + Nova missão. Exporte primeiro o registo, se necessário.');return;}clearArmed=false;fields.forEach(f=>{if(!['cma','cmaLat','cmaLon','tipo'].includes(f.dataset.f))f.value=''});set('cma','Cancela — Heliporto da Proteção Civil');set('cmaLat','32.644866');set('cmaLon','-16.866432');set('emissor','CROS');set('destinatario','Chefe de Brigada');set('estado','Em preparação');set('prioridade','Normal');set('tipo',APP_TIPO);syncChecksFromSaved();syncFlightHours();calculate();notify('Formulário limpo. Pode iniciar uma nova missão.')};try{let raw=localStorage.getItem('ormis_sar_rascunho_v1');if(raw){let saved=JSON.parse(raw);let obj=saved.fields||saved;for(let [k,val] of Object.entries(obj))if(!['cma','cmaLat','cmaLon','emissor','destinatario'].includes(k)&&document.querySelector(`[data-f="${k}"]`))set(k,k==='tipo'?APP_TIPO:val)}}catch(e){}set('cma','Cancela — Heliporto da Proteção Civil');set('cmaLat','32.644866');set('cmaLon','-16.866432');set('emissor','CROS');set('destinatario','Chefe de Brigada');set('tipo',APP_TIPO);syncChecksFromSaved();syncFlightHours();if(!get('data')){let dt=new Date();set('data',`${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`)}calculate();
@@ -196,140 +196,4 @@ document.getElementById('reset-map').addEventListener('click',()=>{geoExtent=geo
 document.getElementById('clear').addEventListener('click',()=>{geoExtent=geoBounds(false);renderGeo()});
 document.getElementById('import-file').addEventListener('change',()=>{setTimeout(()=>{geoExtent=geoBounds(true);renderGeo()},250)});
 geoExtent=geoBounds(true);renderGeo();
-
-// PDF gerado sem impressao nem nova janela; compatibilidade de transferencias depende do iframe.
-let ormisPdfUrl=null;
-function pdfField(doc,label,value,x,y,w){
- doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(47,87,125);
- doc.text(label,x,y);
- doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor(15,36,57);
- const lines=doc.splitTextToSize(String(value||'—'),w);
- doc.text(lines.slice(0,3),x,y+4);
- return Math.max(12,6+lines.slice(0,3).length*4);
-}
-function pdfTitle(doc,label,y){
- doc.setFillColor(225,235,246);doc.rect(12,y-5,186,8,'F');
- doc.setFont('helvetica','bold');doc.setFontSize(10);doc.setTextColor(19,55,91);doc.text(label,15,y);
- return y+9;
-}
-function pdfText(doc,label,value,y,maxLines=4){
- y=pdfTitle(doc,label,y);
- doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor(18,45,72);
- let lines=doc.splitTextToSize(String(value||'—'),181);
- if(lines.length>maxLines){lines=lines.slice(0,maxLines);lines[lines.length-1]+=' […]';}
- doc.text(lines,15,y);
- return y+lines.length*4.2+3;
-}
-function pdfPairs(doc,entries,y){
- for(let i=0;i<entries.length;i+=2){
-  const a=entries[i],b=entries[i+1];
-  const h1=pdfField(doc,a[0],a[1],15,y,84);
-  const h2=b?pdfField(doc,b[0],b[1],109,y,84):0;
-  y+=Math.max(h1,h2)+1;
- }
- return y;
-}
-function ormisPdfHeader(doc,page){
- doc.setFillColor(18,49,81);doc.rect(0,0,210,23,'F');
- doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(16);doc.text('ORMIS '+APP_TIPO+' - ORDEM DE MISSAO',13,12);
- doc.setFontSize(9);doc.text('Centro de Meios Aereos - Madeira',13,18);
- doc.setTextColor(70,90,115);doc.setFont('helvetica','normal');doc.setFontSize(8);
- doc.text('Documento gerado localmente | Validar dados antes de arquivar | '+page+' / 2',105,290,{align:'center'});
-}
-function drawPdfGeo(doc,x,y,w,h){
- // Representacao georreferenciada sempre produzida; raster topografico tentado a seguir.
- doc.setFillColor(239,246,252);doc.rect(x,y,w,h,'F');
- const ext=geoExtent||geoBounds(true);
- const X=lon=>x+(mercX(lon)-ext.left)/(ext.right-ext.left)*w;
- const Y=lat=>y+(ext.top-mercY(lat))/(ext.top-ext.bottom)*h;
- if(geoValid()){
-  const dx=X(Number(get('lon'))),dy=Y(Number(get('lat')));
-  const cx=X(GEO_CMA.lon),cy=Y(GEO_CMA.lat);
-  doc.setDrawColor(218,103,45);doc.setLineWidth(.7);doc.line(cx,cy,dx,dy);
-  doc.setFillColor(21,106,164);doc.circle(cx,cy,2.3,'F');
-  doc.setFillColor(200,61,48);doc.circle(dx,dy,2.3,'F');
-  doc.setFontSize(8);doc.setTextColor(19,55,91);
-  doc.text('CMA Cancela',Math.min(x+w-27,Math.max(x+2,cx+3)),Math.max(y+5,cy-3));
-  doc.text('Destino',Math.min(x+w-18,Math.max(x+2,dx+3)),Math.max(y+5,dy-3));
- } else {
-  doc.setFontSize(9);doc.setTextColor(45,67,85);doc.text('Destino nao definido',x+4,y+8);
- }
- doc.setFontSize(8);doc.setTextColor(35,75,103);doc.text('N',x+w-8,y+6);
- doc.setDrawColor(35,75,103);doc.line(x+w-7.5,y+9,x+w-7.5,y+15);
- doc.setDrawColor(120,150,172);doc.rect(x,y,w,h);
-}
-function attachPdfLink(blob,name){
- if(ormisPdfUrl)URL.revokeObjectURL(ormisPdfUrl);
- ormisPdfUrl=URL.createObjectURL(blob);
- let a=document.getElementById('ormis-pdf-download');
- if(!a){a=document.createElement('a');a.id='ormis-pdf-download';a.style='display:inline-block;background:#0f6c55;color:#fff;padding:11px 14px;border-radius:5px;font-weight:bold;text-decoration:none;margin:9px 0';
- const fb=document.getElementById('ormis-feedback');fb.insertAdjacentElement('afterend',a);}
- a.href=ormisPdfUrl;a.download=name;a.target='_blank';a.rel='noopener';a.textContent='Descarregar PDF gerado: '+name;
-}
-async function ensurePDFLibrary(){
- if(window.jspdf&&window.jspdf.jsPDF)return window.jspdf.jsPDF;
- await new Promise((resolve,reject)=>{
-  const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
-  s.onload=resolve;s.onerror=()=>reject(new Error('Nao foi possivel carregar a biblioteca de PDF (ligacao Internet/CSP).'));
-  document.head.appendChild(s);
- });
- if(!window.jspdf?.jsPDF)throw Error('Biblioteca de PDF indisponivel.');
- return window.jspdf.jsPDF;
-}
-async function buildPDF(){
- if(!validateMission())return;
- syncAirFromChecks();syncFlightHours();
- set('dataEmissao',new Date().toLocaleString('pt-PT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}));
- notify('A gerar PDF no navegador. Nao feche a pagina.');
- const JsPDF=await ensurePDFLibrary();const doc=new JsPDF({orientation:'portrait',unit:'mm',format:'a4',compress:true});
- ormisPdfHeader(doc,1);let y=32;
- y=pdfTitle(doc,'1. Identificacao da missao',y);
- y=pdfPairs(doc,[['N.º ORMIS',get('ormis')],['Ocorrencia SADO',get('sado')],['Tipo / estado',APP_TIPO+' / '+get('estado')],['Data / hora',get('data')+' '+get('hora')],['Local',get('local')],['Concelho',get('concelho')],['Solicitado por',get('solicitante')],['Objetivo',get('objetivo')]],y);
- y=pdfTitle(doc,'2. Dados operacionais e comunicacoes',y);
- y=pdfPairs(doc,[['Origem / destino','CROS / Chefe de Brigada'],['COS',get('cos')],['CB / entidades',get('entidades')],['Grupo SIRESP',get('sireSP')],['Coordenadas partilhadas',get('coordsPartilhadas')],['Prioridade',get('prioridade')]],y);
- y=pdfText(doc,'3. Descricao da ocorrencia / situacao',get('descricao'),y,5);
- y=pdfText(doc,'4. Condicoes do local',get('condicoesLocal'),y,3);
- y=pdfText(doc,'5. Meteorologia no local',get('meteoLocal'),y,3);
- y=pdfText(doc,'6. Instrucoes e observacoes',get('obs'),y,4);
- if(y>285){notify('Aviso: os textos extensos foram abreviados no PDF. Consulte o registo JSON para o texto integral.',true)}
- doc.addPage();ormisPdfHeader(doc,2);y=33;
- y=pdfTitle(doc,'7. Localizacao e navegacao',y);
- const r=calculate();
- y=pdfPairs(doc,[['CMA','Cancela - Heliporto da Protecao Civil'],['Local de destino',get('destino')],['Latitude / longitude (decimal)',get('lat')+' / '+get('lon')],['Latitude / longitude (GMS)',toGMS(get('lat'),'lat')+' / '+toGMS(get('lon'),'lon')],['Distancia em linha reta',r?r.km.toFixed(2)+' km':'—'],['Rumo verdadeiro',r?r.heading.toFixed(1)+' graus':'—']],y);
- y=pdfTitle(doc,'8. Mapa da missao',y);
- const mapY=y+1,mapH=74;drawPdfGeo(doc,15,mapY,180,mapH);
- let basemapUsed=false;
- try{
-   // Imagem remota carregada com CORS. Se falhar, permanece o esquema georreferenciado.
-   const extent=geoExtent||geoBounds(true);
-   const response=await fetch(basemapUrl(extent),{mode:'cors',credentials:'omit'});
-   if(response.ok){const imgBlob=await response.blob();const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(imgBlob)});
-     // Adiciona imagem de fundo e volta a desenhar os pontos e a rota.
-     doc.addImage(data,'PNG',15,mapY,180,mapH);drawPdfGeoOverlay(doc,15,mapY,180,mapH,extent);basemapUsed=true;
-   }
- }catch(e){/* mapa vetorial de reserva */}
- y=mapY+mapH+5;
- doc.setFontSize(7.5);doc.setTextColor(61,78,94);doc.text(basemapUsed?'Base topografica Esri - com CMA, destino e linha direta.':'Base topografica indisponivel no PDF - esquema georreferenciado.',15,y);y+=7;
- y=pdfTitle(doc,'9. Atividade aerea',y);
- y=pdfPairs(doc,[['LAUROS1',airChoices[0].checked?`${get('l1Inicio')} - ${get('l1Fim')} | ${get('l1Min')} min | ${get('l1Desc')} descargas | ${get('l1Guin')} guinchos`:'Nao destacado'],['LAUROS2',airChoices[1].checked?`${get('l2Inicio')} - ${get('l2Fim')} | ${get('l2Min')} min | ${get('l2Desc')} descargas | ${get('l2Guin')} guinchos`:'Nao destacado'],['Total de voo',get('minutosVoo')+' minutos'],['Descargas / guinchos',get('descargas')+' / '+get('guinchos')]],y);
- y=pdfTitle(doc,'10. Responsaveis pela missao',y);
- y=pdfPairs(doc,[['Chefe de sala',get('chefeSala')],['Chefe de brigada',get('chefeBrigada')],['Piloto comandante',get('pilotoComandante')],['Tripulacao',get('tripulacao')],['Emissao',get('dataEmissao')],['','']],y);
- doc.setFontSize(7);doc.setTextColor(75,90,105);doc.text('Linha CMA-destino: referencia geografica; nao constitui rota de voo validada.',15,282);
- const name=filename('.pdf');const blob=doc.output('blob');attachPdfLink(blob,name);
- notify('PDF preparado. Se a transferencia automatica estiver bloqueada pelo Experience Builder, utilize a ligacao verde Descarregar PDF gerado.');
- // Nao abrir nova janela; uma unica tentativa de transferencia iniciada por acao do utilizador.
- const link=document.getElementById('ormis-pdf-download');link.click();
-}
-function drawPdfGeoOverlay(doc,x,y,w,h,ext){
- const X=lon=>x+(mercX(lon)-ext.left)/(ext.right-ext.left)*w;
- const Y=lat=>y+(ext.top-mercY(lat))/(ext.top-ext.bottom)*h;
- if(geoValid()){
-  let cx=X(GEO_CMA.lon),cy=Y(GEO_CMA.lat),dx=X(Number(get('lon'))),dy=Y(Number(get('lat')));
-  doc.setDrawColor(255,255,255);doc.setLineWidth(1.7);doc.line(cx,cy,dx,dy);
-  doc.setDrawColor(219,100,39);doc.setLineWidth(.9);doc.line(cx,cy,dx,dy);
-  doc.setFillColor(21,106,164);doc.circle(cx,cy,2.4,'F');doc.setFillColor(204,61,48);doc.circle(dx,dy,2.4,'F');
- }
- doc.setDrawColor(100,130,160);doc.rect(x,y,w,h);
-}
-
 </script></body></html>
